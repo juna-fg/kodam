@@ -48,10 +48,10 @@
         // Bagian JavaScript buat fungsi generate kodam gaje
                 function generateKodam() {
             var nama = document.getElementById("nama").value;
-            var apiKey = AIzaSyAcG5xbWKir2VjYqbw4lS1yGoa7Wv5kA5M; //  <- Ganti dengan API key asli!
+            var apiKey = "AIzaSyAcG5xbWKir2VjYqbw4lS1yGoa7Wv5kA5M"; //  <- Ganti dengan API key asli!
             
             //  Bagian request ke server gue
-            fetch('https://contoh-api-server-gue.com/generate-kodam?nama=' + nama + '&api_key=' + apiKey)
+            fetch('https://juna-fg.github.io/kodam/' + nama + '&api_key=' + apiKey)
                 .then(response => response.json())
                 .then(data => {
                     //  Nampilin kodam gaje dari server gue
