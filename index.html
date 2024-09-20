@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penentu Takdir Acak</title>
+    <style>
+        /*  Bagian CSS buat desain estetik */ 
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temukan Kodam Gaibmu!</h1>
+        <input type="text" id="nama" placeholder="Masukkan nama kamu">
+        <button onclick="generateKodam()">Generate</button>
+        <p id="kodam"></p>
+    </div>
+
+    <script>
+        // Bagian JavaScript buat fungsi generate kodam gaje
+                function generateKodam() {
+            var nama = document.getElementById("nama").value;
+            var apiKey = AIzaSyAcG5xbWKir2VjYqbw4lS1yGoa7Wv5kA5M; //  <- Ganti dengan API key asli!
+            
+            //  Bagian request ke server gue
+            fetch('https://contoh-api-server-gue.com/generate-kodam?nama=' + nama + '&api_key=' + apiKey)
+                .then(response => response.json())
+                .then(data => {
+                    //  Nampilin kodam gaje dari server gue
+                    document.getElementById("kodam").innerHTML = nama + ", kodam gaibmu adalah: " + data.kodam;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById("kodam").innerHTML = "Yah, server gue lagi ngambek. Coba lagi nanti ya!";
+                });
+        }
+            var randomIndex = Math.floor(Math.random() * kodam.length);
+            document.getElementById("kodam").innerHTML = nama + ", kodam gaibmu adalah: " + kodam[randomIndex];
+        }
+    </script>
+</body>
+</html>
